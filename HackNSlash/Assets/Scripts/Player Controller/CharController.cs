@@ -22,6 +22,8 @@ public class CharController : MonoBehaviour
     int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
+    public int healAmount = 10;
+
     void Awake()
     {
         forward = Cam.transform.forward;
@@ -80,11 +82,13 @@ public class CharController : MonoBehaviour
         playerRigidbody.transform.position += (forward * input.y + right * input.x) * Time.deltaTime * moveSpeed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Item"))
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+        if (other.gameObject.CompareTag("Item"))
         {
-            collision.gameObject.SetActive(false);
+            playerHealth.HealthChange(healAmount);
+            other.gameObject.SetActive(false);
         }
     }
 
