@@ -33,6 +33,4 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += healAmount;
     }
-
-
 }
