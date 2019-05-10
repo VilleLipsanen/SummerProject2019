@@ -10,7 +10,7 @@ public class CharController : MonoBehaviour
     float perkele = 2f;
     public GameObject Cam;
     Vector2 input;
-    
+
     Vector3 forward, right;
     public GameObject Player;
 
@@ -25,6 +25,8 @@ public class CharController : MonoBehaviour
 
     public int healAmount = 10;
 
+
+    public int healAmount = 10;
 
     void Awake()
     {
@@ -92,7 +94,7 @@ public class CharController : MonoBehaviour
         playerRigidbody.transform.position += (forward * input.y + right * input.x) * Time.deltaTime * moveSpeed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (collision.gameObject.CompareTag("Item"))
