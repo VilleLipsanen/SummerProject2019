@@ -26,4 +26,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateGUI();
     }
+
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+    }
+
+    public void Heal(int healAmount)
+    {
+        currentHealth += healAmount;
+    }
 }

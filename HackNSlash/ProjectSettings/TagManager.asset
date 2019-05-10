@@ -10,6 +10,8 @@ TagManager:
   - LootHall
   - 2DoorRoom
   - BossRoom
+  - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX

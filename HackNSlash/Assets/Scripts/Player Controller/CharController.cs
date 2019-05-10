@@ -21,6 +21,8 @@ public class CharController : MonoBehaviour
     Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
     int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+    public GameObject EquippedWeapon;
+
 
     public int healAmount = 10;
 
@@ -45,6 +47,14 @@ public class CharController : MonoBehaviour
         float v = Input.GetAxisRaw("VerticalKey");
         Move(h, v);
         Turning();
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            EquippedWeapon.GetComponent<AxeAttack>().PerformAttack();
+        }
     }
 
 
