@@ -5,23 +5,26 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour
 {
 
-    private int startingHealth = 100;
+    public int maxHealth = 100;
     public int currentHealth;
+    public Text currentHealthLabel;
 
     private void Start()
     {
-        currentHealth = startingHealth;
-        Debug.Log("chad " + currentHealth);
+        currentHealth = maxHealth;
+        UpdateGUI();
+    }
+    public void UpdateGUI()
+    {
+        currentHealthLabel.text = currentHealth.ToString();
     }
 
-    public PlayerHealth(int health)
+    public void HealthChange(int amount)
     {
-        currentHealth = health;
-    }
-
-    public int GetHealth()
-    {
-        return currentHealth;
+        currentHealth += amount;
+        Debug.Log(currentHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateGUI();
     }
 
     public void TakeDamage(int damageAmount)

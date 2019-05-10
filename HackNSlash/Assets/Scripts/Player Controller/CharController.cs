@@ -23,6 +23,8 @@ public class CharController : MonoBehaviour
     float camRayLength = 100f;          // The length of the ray from the camera into the scene.
     public GameObject EquippedWeapon;
 
+    public int healAmount = 10;
+
 
     void Awake()
     {
@@ -92,8 +94,10 @@ public class CharController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (collision.gameObject.CompareTag("Item"))
         {
+            playerHealth.HealthChange(healAmount);
             collision.gameObject.SetActive(false);
         }
     }
