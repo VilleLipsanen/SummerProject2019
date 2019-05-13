@@ -26,7 +26,7 @@ public class CharController : MonoBehaviour
     public int healAmount = 10;
 
 
-    public int healAmount = 10;
+   
 
     void Awake()
     {
@@ -97,10 +97,10 @@ public class CharController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
-        if (collision.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item"))
         {
             playerHealth.HealthChange(healAmount);
-            collision.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 
