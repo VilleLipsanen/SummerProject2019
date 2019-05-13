@@ -25,9 +25,6 @@ public class CharController : MonoBehaviour
 
     public int healAmount = 10;
 
-
-    public int healAmount = 10;
-
     void Awake()
     {
         forward = Cam.transform.forward;
@@ -36,7 +33,7 @@ public class CharController : MonoBehaviour
 
         right = Cam.transform.right;
         right.y = 0;
-        right = Vector3.Normalize(right);
+        right = Vector3.Normalize(right);//take forward and right angle from camera
 
         floorMask = LayerMask.GetMask("Floor");
         playerRigidbody = GetComponent<Rigidbody>();
@@ -88,13 +85,26 @@ public class CharController : MonoBehaviour
 
     void Move(float h, float v)
     {
+        //take input from axixes
         input = new Vector2(h, v);
+        //clamp so doesnt go too fast diagonally
         input = Vector2.ClampMagnitude(input, 4);
 
+        //apply correct movement to the character model
         playerRigidbody.transform.position += (forward * input.y + right * input.x) * Time.deltaTime * moveSpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider collision)
+    {
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            playerHealth.HealthChange(healAmount);
+            collision.gameObject.SetActive(false);
+        }
+    }*/
+
+    private void OnCollisionEnter(Collision collision)
     {
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (collision.gameObject.CompareTag("Item"))
