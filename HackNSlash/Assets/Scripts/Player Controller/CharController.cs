@@ -104,7 +104,7 @@ public class CharController : MonoBehaviour
         }
     }*/
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (other.gameObject.CompareTag("Item"))
