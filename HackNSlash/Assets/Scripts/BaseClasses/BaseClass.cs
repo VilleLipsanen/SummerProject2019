@@ -5,28 +5,21 @@ using UnityEngine;
 public class BaseClass : MonoBehaviour
 {
 
-    int HP;
-    int curHP;
+    public CharacterStat HP;
 
-    int Stamina;
-    int curStamina;
+    public CharacterStat Stamina;
 
-    int Speed;
-    int curSpeed;
+    public CharacterStat Speed;
 
-    int Mana;
-    int curMana;
+    public CharacterStat Mana;
 
-    int Atk;
-    int curAtk;
+    public CharacterStat Atk;
 
-    int Def;
-    int curDef;
+    public CharacterStat Def;
 
-    int Crit;
-    int curCrit;
+    public CharacterStat Crit;
 
-    int Level;
+    public int Level;
     int Exp;
 
     List<BaseAttack> attacks;

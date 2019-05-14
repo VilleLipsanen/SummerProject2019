@@ -30,6 +30,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1567388633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597158985046003011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2777114ee6c6e8418308edb48f98b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP:
+    BaseValue: 0
+  Stamina:
+    BaseValue: 0
+  Speed:
+    BaseValue: 0
+  Mana:
+    BaseValue: 0
+  Atk:
+    BaseValue: 0
+  Def:
+    BaseValue: 0
+  Crit:
+    BaseValue: 0
+  Level: 0
 --- !u!1001 &37217819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,10 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1948535115976630, guid: f7902c99c75cad34f934860c6b6ddd9e, type: 3}
-      propertyPath: m_Name
-      value: Low Poly Warrior Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 4028250183184810, guid: f7902c99c75cad34f934860c6b6ddd9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.16
@@ -147,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 4028250183184810, guid: f7902c99c75cad34f934860c6b6ddd9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948535115976630, guid: f7902c99c75cad34f934860c6b6ddd9e, type: 3}
+      propertyPath: m_Name
+      value: Low Poly Warrior Variant
       objectReference: {fileID: 0}
     - target: {fileID: 95139111640682058, guid: f7902c99c75cad34f934860c6b6ddd9e,
         type: 3}
