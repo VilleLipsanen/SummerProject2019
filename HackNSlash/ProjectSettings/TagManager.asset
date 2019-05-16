@@ -12,6 +12,7 @@ TagManager:
   - BossRoom
   - Item
   - Enemy
+  - Collide
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - 
   - 
   - Floor
-  - 
+  - Walkable
   - 
   - 
   - 

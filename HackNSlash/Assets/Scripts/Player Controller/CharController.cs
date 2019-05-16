@@ -37,6 +37,7 @@ public class CharController : MonoBehaviour
 
         floorMask = LayerMask.GetMask("Floor");
         playerRigidbody = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -54,6 +55,7 @@ public class CharController : MonoBehaviour
         {
             EquippedWeapon.GetComponent<AxeAttack>().PerformAttack();
         }
+
     }
 
 
@@ -85,6 +87,15 @@ public class CharController : MonoBehaviour
 
     void Move(float h, float v)
     {
+
+       /* if (h != 0 || v != 0)
+        {
+            anim.SetTrigger("Run");
+        }
+        else
+        {
+            anim.SetTrigger("notRun");
+        }*/
         //take input from axixes
         input = new Vector2(h, v);
         //clamp so doesnt go too fast diagonally
@@ -94,15 +105,15 @@ public class CharController : MonoBehaviour
         playerRigidbody.transform.position += (forward * input.y + right * input.x) * Time.deltaTime * moveSpeed;
     }
 
-   /* private void OnTriggerEnter(Collider collision)
-    {
-        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            playerHealth.HealthChange(healAmount);
-            collision.gameObject.SetActive(false);
-        }
-    }*/
+    /* private void OnTriggerEnter(Collider collision)
+     {
+         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+         if (collision.gameObject.CompareTag("Item"))
+         {
+             playerHealth.HealthChange(healAmount);
+             collision.gameObject.SetActive(false);
+         }
+     }*/
 
     private void OnCollisionEnter(Collision other)
     {

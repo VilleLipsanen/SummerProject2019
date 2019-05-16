@@ -9,8 +9,6 @@ public class BaseClass : MonoBehaviour
 
     public CharacterStat Stamina;
 
-    public CharacterStat Speed;
-
     public CharacterStat Mana;
 
     public CharacterStat Atk;
@@ -19,8 +17,10 @@ public class BaseClass : MonoBehaviour
 
     public CharacterStat Crit;
 
+    public CharacterStat Speed;
+
     public int Level;
-    int Exp;
+    public int Exp;
 
     List<BaseAttack> attacks;
     List<BaseMagic> magics;
