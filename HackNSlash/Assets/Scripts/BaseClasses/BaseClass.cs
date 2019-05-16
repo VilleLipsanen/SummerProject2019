@@ -5,11 +5,14 @@ using UnityEngine;
 public class BaseClass : MonoBehaviour
 {
 
-    public CharacterStat HP;
+    public CharacterStat MaxHP;
+    public CharacterStat curHP;
 
-    public CharacterStat Stamina;
+    public CharacterStat MaxStamina;
+    public CharacterStat CurStamina;
 
-    public CharacterStat Mana;
+    public CharacterStat MaxMana;
+    public CharacterStat CurMana;
 
     public CharacterStat Atk;
 
