@@ -5,13 +5,14 @@ using UnityEngine;
 public class BaseClass : MonoBehaviour
 {
 
-    public CharacterStat HP;
+    public CharacterStat MaxHP;
+    public CharacterStat curHP;
 
-    public CharacterStat Stamina;
+    public CharacterStat MaxStamina;
+    public CharacterStat CurStamina;
 
-    public CharacterStat Speed;
-
-    public CharacterStat Mana;
+    public CharacterStat MaxMana;
+    public CharacterStat CurMana;
 
     public CharacterStat Atk;
 
@@ -19,8 +20,10 @@ public class BaseClass : MonoBehaviour
 
     public CharacterStat Crit;
 
+    public CharacterStat Speed;
+
     public int Level;
-    int Exp;
+    public int Exp;
 
     List<BaseAttack> attacks;
     List<BaseMagic> magics;
