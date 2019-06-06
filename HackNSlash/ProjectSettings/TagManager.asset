@@ -22,11 +22,11 @@ TagManager:
   - 
   - 
   - Floor
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Roof
+  - Walls and floor
+  - walkable
+  - player
+  - PostProcessing
   - 
   - 
   - 

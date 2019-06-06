@@ -10,6 +10,8 @@ public class CharController : MonoBehaviour
     float perkele = 2f;
     public GameObject Cam;
     Vector2 input;
+    bool Run = false;
+    bool notRun = true;
 
     Vector3 forward, right;
     public GameObject Player;
@@ -37,6 +39,7 @@ public class CharController : MonoBehaviour
 
         floorMask = LayerMask.GetMask("Floor");
         playerRigidbody = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -50,10 +53,11 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+       if (Input.GetMouseButtonDown(0))
         {
             EquippedWeapon.GetComponent<AxeAttack>().PerformAttack();
         }
+        
     }
 
 
@@ -85,11 +89,19 @@ public class CharController : MonoBehaviour
 
     void Move(float h, float v)
     {
+
+        if(h != 0 || v != 0)
+        {
+            anim.SetBool("Run", true);
+        } else
+        {
+            anim.SetBool("Run", false);
+        }
         //take input from axixes
         input = new Vector2(h, v);
         //clamp so doesnt go too fast diagonally
         input = Vector2.ClampMagnitude(input, 4);
-
+        
         //apply correct movement to the character model
         playerRigidbody.transform.position += (forward * input.y + right * input.x) * Time.deltaTime * moveSpeed;
     }
